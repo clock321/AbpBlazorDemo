@@ -14,14 +14,14 @@ services:
             - ACCEPT_EULA=Y
 
     webapi:
-        image: registry.cn-hangzhou.aliyuncs.com/yoyosoft/blazorapidemo
+        image: registry.cn-hangzhou.aliyuncs.com/zybdev/blazorapidemo
         ports:
             #- 9898:80
             - 9898:80
-            - 3238:80
+            - 3238:3238
         networks:
             - backend
-            - frontend
+            #- frontend
         environment:
             - WAITHOST=mssql
             - WAITPORT=1433
@@ -33,7 +33,7 @@ services:
             - mssql
 
     blazor:
-        image: registry.cn-hangzhou.aliyuncs.com/yoyosoft/blazorwebdemo
+        image: registry.cn-hangzhou.aliyuncs.com/zybdev/blazorwebdemo
 
         networks:
             - backend

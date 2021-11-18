@@ -62,15 +62,19 @@ docker build -t yoyomooc/blazorapidemo .
 
 Copy-Item (Join-Path $buildFolder "docker/*.*") $outputFolder
 
+docker login --username=atclock@sina.com -p hBRc5XJPMK@PgMr registry.cn-hangzhou.aliyuncs.com 
 
-docker tag  yoyomooc/blazorapidemo registry.cn-hangzhou.aliyuncs.com/yoyosoft/blazorapidemo
+docker tag  yoyomooc/blazorapidemo registry.cn-hangzhou.aliyuncs.com/zybdev/blazorapidemo
 
-docker tag  yoyomooc/blazorwebdemo registry.cn-hangzhou.aliyuncs.com/yoyosoft/blazorwebdemo
+docker tag  yoyomooc/blazorwebdemo registry.cn-hangzhou.aliyuncs.com/zybdev/blazorwebdemo
 
 
-docker push  registry.cn-hangzhou.aliyuncs.com/yoyosoft/blazorapidemo
-docker push  registry.cn-hangzhou.aliyuncs.com/yoyosoft/blazorwebdemo
+docker push  registry.cn-hangzhou.aliyuncs.com/zybdev/blazorapidemo
+docker push  registry.cn-hangzhou.aliyuncs.com/zybdev/blazorwebdemo
 
 
 
 Set-Location $buildFolder
+
+Write-Host 'Press Any Key!' -NoNewline
+$null = [Console]::ReadKey('?')

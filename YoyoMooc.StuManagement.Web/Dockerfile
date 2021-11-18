@@ -16,5 +16,4 @@ EXPOSE 80
 ENV WAITHOST=HostName WAITPORT=1433
 
 ## 接口ok后再执行dotnet入口
-ENTRYPOINT ./wait-for-it.sh $WAITHOST:$WAITPORT --timeout=0 \
-&& exec dotnet YoyoMooc.StuManagement.Web.dll
+ENTRYPOINT ./wait-for-it.sh $WAITHOST:$WAITPORT --timeout=0 && exec dotnet YoyoMooc.StuManagement.Web.dll
