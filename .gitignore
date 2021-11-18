@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+YoyoMooc.StuManagement.Web/dist/
+scripts/outputs/
+/scripts/docker/mssqlData
+dist/
