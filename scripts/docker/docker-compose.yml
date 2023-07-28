@@ -27,7 +27,6 @@ services:
             - WAITPORT=1433
             - ConnectionStrings__DBConnection=Server=mssql;Database=StudentDb_Blazor;User Id=sa;Password=bb123456??
             - INITDB=true
-
             - ASPNETCORE_ENVIRONMENT=Development
         depends_on:
             - mssql
@@ -39,12 +38,14 @@ services:
             - backend
             - frontend
         environment:
-            - WAITHOST=mssql
-            - WAITPORT=1433
+           # - WAITHOST=mssql
+           # - WAITPORT=1433
             - baseAddress=http://webapi/
             - ConnectionStrings__DBConnection=Server=mssql;Database=StudentDb_Blazor;User Id=sa;Password=bb123456??;
             - DBHOST=mysql
             - ASPNETCORE_ENVIRONMENT=Development
+        #env_file:
+            #- ./blazor.env
         depends_on:
             - mssql
 
